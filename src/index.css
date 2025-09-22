@@ -3778,6 +3778,15 @@ html {
   z-index: 10;
 }
 
+
+.pixelated-title {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  margin-bottom: 0;
+  display: block;
+}
+
 .pixel-star, .dithered-pixel, .pixelated-cloud {
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;

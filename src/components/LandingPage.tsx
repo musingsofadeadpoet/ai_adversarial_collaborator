@@ -51,7 +51,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
       {/* Main content container */}
       <div className="flex flex-col items-center justify-start pt-24 px-6 h-screen overflow-hidden">
-        {/* Sub-heading - moved down much more */}
+        {/* Sub-heading */}
         <motion.div 
           className="text-center mb-0 mt-16"
           initial={{ opacity: 0, y: 30 }}
@@ -69,7 +69,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           </p>
         </motion.div>
 
-        {/* Main title without asterisks - slightly smaller size */}
+        {/* Main title */}
         <motion.div 
           className="flex items-center justify-center mb-0 mt-0"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -80,18 +80,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             src={titleImage} 
             alt="ADVERSARIAL COLLABORATOR" 
             className="h-36 md:h-48 lg:h-60 xl:h-72 object-contain pixelated-title max-w-full"
-            style={{
-              imageRendering: 'pixelated',
-              MozImageRendering: 'crisp-edges',
-              WebkitImageRendering: 'crisp-edges',
-              marginBottom: 0,
-              display: 'block'
-            }}
           />
-
         </motion.div>
 
-        {/* Get Started Button - directly touching title */}
+        {/* Get Started Button */}
         <motion.div 
           className="mb-4 -mt-4"
           initial={{ opacity: 0, y: 20 }}
@@ -117,79 +109,42 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           {/* Research Collaboration Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ 
-              opacity: 1, 
-              y: [0, -8, 0] 
-            }}
+            animate={{ opacity: 1, y: [0, -8, 0] }}
             transition={{ 
               opacity: { duration: 0.6, delay: 1.2 },
-              y: { 
-                duration: 3.5, 
-                delay: 1.2,
-                repeat: Infinity, 
-                ease: "easeInOut" 
-              }
+              y: { duration: 3.5, delay: 1.2, repeat: Infinity, ease: "easeInOut" }
             }}
           >
-            <img 
-              src={researchCard} 
-              alt="Research Collaboration" 
-              className="w-full h-auto object-contain"
-            />
+            <img src={researchCard} alt="Research Collaboration" className="w-full h-auto object-contain" />
           </motion.div>
 
           {/* Visual Mind Mapping Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ 
-              opacity: 1, 
-              y: [0, -12, 0] 
-            }}
+            animate={{ opacity: 1, y: [0, -12, 0] }}
             transition={{ 
               opacity: { duration: 0.6, delay: 1.4 },
-              y: { 
-                duration: 4.2, 
-                delay: 1.8,
-                repeat: Infinity, 
-                ease: "easeInOut" 
-              }
+              y: { duration: 4.2, delay: 1.8, repeat: Infinity, ease: "easeInOut" }
             }}
           >
-            <img 
-              src={mindmapCard} 
-              alt="Visual Mind Mapping" 
-              className="w-full h-auto object-contain"
-            />
+            <img src={mindmapCard} alt="Visual Mind Mapping" className="w-full h-auto object-contain" />
           </motion.div>
 
           {/* Integrated Workflow Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ 
-              opacity: 1, 
-              y: [0, -6, 0] 
-            }}
+            animate={{ opacity: 1, y: [0, -6, 0] }}
             transition={{ 
               opacity: { duration: 0.6, delay: 1.6 },
-              y: { 
-                duration: 2.8, 
-                delay: 2.1,
-                repeat: Infinity, 
-                ease: "easeInOut" 
-              }
+              y: { duration: 2.8, delay: 2.1, repeat: Infinity, ease: "easeInOut" }
             }}
           >
-            <img 
-              src={workflowCard} 
-              alt="Integrated Workflow" 
-              className="w-full h-auto object-contain"
-            />
+            <img src={workflowCard} alt="Integrated Workflow" className="w-full h-auto object-contain" />
           </motion.div>
         </motion.div>
-
       </div>
 
-      {/* Earth/Globe positioned to overlap cards */}
+      {/* Earth/Globe */}
       <motion.div 
         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[35%]"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -200,9 +155,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           src={earthImage} 
           alt="Earth" 
           className="w-[32rem] h-[32rem] md:w-[36rem] md:h-[36rem] lg:w-[40rem] lg:h-[40rem] xl:w-[44rem] xl:h-[44rem] object-contain"
-          style={{
-            imageRendering: 'auto'
-          }}
+          style={{ imageRendering: 'auto' }}
         />
       </motion.div>
     </motion.div>
