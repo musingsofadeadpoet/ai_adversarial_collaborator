@@ -1,0 +1,724 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+  --card: #ffffff;
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #030213;
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.0058 264.53);
+  --secondary-foreground: #030213;
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(0, 0, 0, 0.1);
+  --input: transparent;
+  --input-background: #f3f3f5;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #030213;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.145 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.145 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Ensure proper scrolling behavior for chat interface */
+.chat-scroll-container {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+.chat-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-scroll-container::-webkit-scrollbar-track {
+  background: var(--muted);
+  border-radius: 4px;
+}
+
+.chat-scroll-container::-webkit-scrollbar-thumb {
+  background: var(--muted-foreground);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+.chat-scroll-container::-webkit-scrollbar-thumb:hover {
+  opacity: 0.8;
+}
+
+/* Pixelated Background Styles - Exact Blue Palette */
+.pixelated-gradient {
+  background: linear-gradient(
+    180deg,
+    #0a0e2e 0%,     /* Very dark navy from reference */
+    #1a2465 12%,    /* Dark blue */
+    #2d4bb8 24%,    /* Medium blue */
+    #4169e1 36%,    /* Royal blue */
+    #5b8df5 48%,    /* Lighter blue */
+    #7bb3ff 60%,    /* Sky blue */
+    #9dceff 72%,    /* Light sky blue */
+    #c4e4ff 84%,    /* Very light blue */
+    #e8f4ff 96%,    /* Pale blue */
+    #f5faff 100%    /* Almost white */
+  );
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Create smoother pixelated steps with dithering */
+.pixelated-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    /* Dithered transition overlay */
+    repeating-linear-gradient(
+      180deg,
+      transparent 0%,
+      rgba(255,255,255,0.08) 2px,
+      transparent 4px,
+      rgba(0,0,0,0.05) 6px,
+      transparent 8px
+    ),
+    /* Main stepped gradient with smooth transitions */
+    linear-gradient(
+      180deg,
+      #0a0e2e 0%, #0a0e2e 8%,
+      #12184a 8%, #1a2465 16%,
+      #1a2465 16%, #243590 24%,
+      #2d4bb8 24%, #3d5bc5 32%,
+      #4169e1 32%, #527beb 40%,
+      #5b8df5 40%, #6fa1f7 48%,
+      #7bb3ff 48%, #8cc1ff 56%,
+      #9dceff 56%, #b1d9ff 64%,
+      #c4e4ff 64%, #d6edff 72%,
+      #e8f4ff 72%, #f0f8ff 80%,
+      #f5faff 80%, #ffffff 88%,
+      #ffffff 88%, #ffffff 100%
+    );
+  opacity: 0.9;
+}
+
+/* Enhanced dithering pattern for smooth transitions */
+.dither-pattern {
+  background-image: 
+    /* Fine dithering dots */
+    radial-gradient(circle at 25% 25%, transparent 40%, rgba(255,255,255,0.15) 41%, rgba(255,255,255,0.15) 60%, transparent 61%),
+    radial-gradient(circle at 75% 75%, transparent 40%, rgba(0,0,0,0.08) 41%, rgba(0,0,0,0.08) 60%, transparent 61%),
+    radial-gradient(circle at 75% 25%, transparent 40%, rgba(255,255,255,0.08) 41%, rgba(255,255,255,0.08) 60%, transparent 61%),
+    radial-gradient(circle at 25% 75%, transparent 40%, rgba(0,0,0,0.04) 41%, rgba(0,0,0,0.04) 60%, transparent 61%),
+    /* Larger texture dots */
+    radial-gradient(circle at 50% 50%, transparent 60%, rgba(255,255,255,0.06) 61%, rgba(255,255,255,0.06) 80%, transparent 81%);
+  background-size: 6px 6px, 6px 6px, 6px 6px, 6px 6px, 12px 12px;
+  background-position: 0 0, 3px 3px, 3px 0, 0 3px, 6px 6px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  mix-blend-mode: overlay;
+}
+
+/* Pixel stars */
+.pixel-star {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+}
+
+/* Pixel clouds - Blue themed */
+.pixel-cloud {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f5faff 15%,
+    #e8f4ff 30%,
+    #c4e4ff 45%,
+    #9dceff 60%,
+    #7bb3ff 75%,
+    #5b8df5 90%,
+    #4169e1 100%
+  );
+  border-radius: 50px;
+  position: relative;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(2px 2px 6px rgba(65, 105, 225, 0.2));
+  opacity: 0.8;
+}
+
+.pixel-cloud::before,
+.pixel-cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 50px;
+}
+
+.pixel-cloud::before {
+  width: 50%;
+  height: 80%;
+  top: -20%;
+  left: 10%;
+}
+
+.pixel-cloud::after {
+  width: 60%;
+  height: 70%;
+  top: -10%;
+  right: 10%;
+}
+
+/* Sparkles animation - Blue themed */
+.pixel-sparkles {
+  background-image: 
+    radial-gradient(circle at 20% 30%, rgba(245, 250, 255, 0.9) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(232, 244, 255, 0.7) 1px, transparent 1px),
+    radial-gradient(circle at 40% 70%, rgba(196, 228, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 90% 80%, rgba(157, 206, 255, 0.6) 1px, transparent 1px),
+    radial-gradient(circle at 10% 90%, rgba(123, 179, 255, 0.7) 1px, transparent 1px),
+    radial-gradient(circle at 60% 10%, rgba(255, 255, 255, 0.9) 1px, transparent 1px),
+    radial-gradient(circle at 75% 45%, rgba(245, 250, 255, 0.5) 1px, transparent 1px),
+    radial-gradient(circle at 25% 85%, rgba(232, 244, 255, 0.6) 1px, transparent 1px);
+  background-size: 140px 140px, 180px 180px, 160px 160px, 200px 200px, 150px 150px, 170px 170px, 190px 190px, 210px 210px;
+  animation: sparkle 12s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    opacity: 0.2; 
+    transform: scale(1);
+  }
+  25% { 
+    opacity: 0.6; 
+    transform: scale(1.1);
+  }
+  50% { 
+    opacity: 0.9; 
+    transform: scale(1);
+  }
+  75% { 
+    opacity: 0.4; 
+    transform: scale(0.9);
+  }
+}
+
+/* Additional pixelated effects */
+.pixelated-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    );
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dither-pattern {
+    background-size: 6px 6px, 6px 6px, 6px 6px, 6px 6px;
+    background-position: 0 0, 3px 3px, 3px 0, 0 3px;
+  }
+}
+
+/* Enhanced pixelation for better effect */
+@supports (filter: blur(0px)) {
+  .pixelated-gradient {
+    filter: contrast(1.1) brightness(1.05) saturate(1.2);
+  }
+}
+
+/* Subtle animated gradient shifts */
+@keyframes gradientShift {
+  0%, 100% { 
+    filter: hue-rotate(0deg) contrast(1.08) brightness(1.02) saturate(1.15);
+  }
+  33% { 
+    filter: hue-rotate(2deg) contrast(1.12) brightness(1.06) saturate(1.25);
+  }
+  66% { 
+    filter: hue-rotate(-1deg) contrast(1.1) brightness(1.04) saturate(1.2);
+  }
+}
+
+.pixelated-gradient {
+  animation: gradientShift 30s ease-in-out infinite;
+}
+
+/* Enhanced pixelated gradient with better transitions */
+.pixelated-gradient::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    /* Subtle grid texture */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255, 255, 255, 0.03) 2px,
+      rgba(255, 255, 255, 0.03) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 3px
+    ),
+    /* Noise texture for organic dithering */
+    repeating-conic-gradient(
+      from 0deg at 50% 50%,
+      rgba(255,255,255,0.01) 0deg,
+      transparent 30deg,
+      rgba(0,0,0,0.01) 60deg,
+      transparent 90deg
+    );
+  background-size: 4px 4px, 4px 4px, 8px 8px;
+  mix-blend-mode: soft-light;
+  opacity: 0.8;
+}
+
+/* Enhanced Dithered Background for Visible Pixelation */
+.dithered-noise {
+  background-image: 
+    /* Large visible dither dots */
+    repeating-radial-gradient(
+      circle at 0px 0px,
+      rgba(255,255,255,0.15) 0px,
+      rgba(255,255,255,0.15) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-radial-gradient(
+      circle at 2px 2px,
+      rgba(0,0,0,0.1) 0px,
+      rgba(0,0,0,0.1) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    /* Ordered dither grid pattern */
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      rgba(255,255,255,0.08) 1px,
+      transparent 2px,
+      rgba(0,0,0,0.05) 3px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      rgba(255,255,255,0.06) 1px,
+      transparent 2px,
+      rgba(0,0,0,0.04) 3px,
+      transparent 4px
+    ),
+    /* Checkerboard pattern for extra texture */
+    repeating-conic-gradient(
+      from 0deg at 2px 2px,
+      rgba(255,255,255,0.04) 0deg,
+      transparent 90deg,
+      rgba(0,0,0,0.03) 180deg,
+      transparent 270deg
+    );
+  background-size: 4px 4px, 4px 4px, 4px 4px, 4px 4px, 4px 4px;
+  background-position: 0 0, 2px 2px, 0 0, 0 0, 1px 1px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  mix-blend-mode: overlay;
+}
+
+/* Dithered clouds with quantized colors */
+.dithered-cloud {
+  background: 
+    /* Base cloud gradient with quantized steps */
+    linear-gradient(
+      135deg,
+      #ffffff 0%, #ffffff 14%,
+      #f5faff 14%, #f5faff 28%,
+      #e8f4ff 28%, #e8f4ff 42%,
+      #c4e4ff 42%, #c4e4ff 57%,
+      #9dceff 57%, #9dceff 71%,
+      #7bb3ff 71%, #7bb3ff 85%,
+      #5b8df5 85%, #5b8df5 100%
+    ),
+    /* Dither pattern overlay */
+    repeating-conic-gradient(
+      from 0deg at 1px 1px,
+      rgba(255,255,255,0.1) 0deg,
+      transparent 90deg,
+      rgba(0,0,0,0.05) 180deg,
+      transparent 270deg
+    );
+  background-size: 100% 100%, 2px 2px;
+  border-radius: 50px;
+  position: relative;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  filter: drop-shadow(2px 2px 4px rgba(65, 105, 225, 0.15));
+  opacity: 0.7;
+}
+
+.dithered-cloud::before,
+.dithered-cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 50px;
+  image-rendering: pixelated;
+}
+
+.dithered-cloud::before {
+  width: 50%;
+  height: 80%;
+  top: -20%;
+  left: 10%;
+}
+
+.dithered-cloud::after {
+  width: 60%;
+  height: 70%;
+  top: -10%;
+  right: 10%;
+}
+
+/* Dithered pixels with quantized appearance */
+.dithered-pixel {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  box-shadow: 
+    0 0 1px rgba(255, 255, 255, 0.8),
+    0 0 2px rgba(245, 250, 255, 0.4);
+}
+
+/* Enhanced dithered sparkles with visible patterns */
+.dithered-sparkles {
+  background-image: 
+    /* Larger, more visible sparkle dots */
+    radial-gradient(circle at 15% 25%, rgba(245, 250, 255, 0.9) 1px, transparent 1px),
+    radial-gradient(circle at 85% 15%, rgba(232, 244, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 35% 75%, rgba(196, 228, 255, 0.9) 1px, transparent 1px),
+    radial-gradient(circle at 75% 85%, rgba(157, 206, 255, 0.7) 1px, transparent 1px),
+    radial-gradient(circle at 25% 90%, rgba(123, 179, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 1.0) 1px, transparent 1px),
+    /* More prominent dithered pattern overlay */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      rgba(255,255,255,0.06) 1px,
+      transparent 2px,
+      rgba(245,250,255,0.04) 3px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      rgba(232,244,255,0.05) 1px,
+      transparent 2px,
+      rgba(196,228,255,0.03) 3px,
+      transparent 4px
+    );
+  background-size: 
+    120px 120px, 160px 160px, 140px 140px, 
+    180px 180px, 130px 130px, 150px 150px,
+    8px 8px, 8px 8px;
+  animation: ditheredSparkle 18s ease-in-out infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes ditheredSparkle {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(1);
+  }
+  25% { 
+    opacity: 0.7; 
+    transform: scale(1.02);
+  }
+  50% { 
+    opacity: 0.9; 
+    transform: scale(1);
+  }
+  75% { 
+    opacity: 0.5; 
+    transform: scale(0.98);
+  }
+}
+
+/* Responsive adjustments for dithered effects */
+/* Additional pixelated overlay for enhanced visibility */
+.pixelated-overlay {
+  background-image: 
+    /* Large dot matrix pattern */
+    repeating-radial-gradient(
+      circle at 0px 0px,
+      rgba(255,255,255,0.12) 0px,
+      rgba(255,255,255,0.12) 0.5px,
+      transparent 0.5px,
+      transparent 2px
+    ),
+    repeating-radial-gradient(
+      circle at 1px 1px,
+      rgba(0,0,0,0.08) 0px,
+      rgba(0,0,0,0.08) 0.5px,
+      transparent 0.5px,
+      transparent 2px
+    ),
+    /* Crosshatch dithering pattern */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
+      rgba(255,255,255,0.05) 0.5px,
+      transparent 1px,
+      transparent 3px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0px,
+      rgba(0,0,0,0.04) 0.5px,
+      transparent 1px,
+      transparent 3px
+    );
+  background-size: 2px 2px, 2px 2px, 6px 6px, 6px 6px;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  mix-blend-mode: multiply;
+}
+
+/* Pixelated cloud styling */
+.pixelated-cloud {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+  
+  /* Add subtle dithering effect to clouds */
+  filter: contrast(1.1) brightness(1.1);
+  
+  /* Ensure clouds appear above other elements but below UI */
+  z-index: 10;
+}
+
+/* Enhance pixelated rendering for all pixel art elements */
+.pixel-star,
+.dithered-pixel,
+.pixelated-cloud {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+@media (max-width: 768px) {
+  .dithered-noise {
+    background-size: 3px 3px, 3px 3px, 3px 3px, 3px 3px, 3px 3px;
+  }
+  
+  .dithered-sparkles {
+    background-size: 
+      80px 80px, 100px 100px, 90px 90px, 
+      120px 120px, 85px 85px, 110px 110px,
+      6px 6px, 6px 6px;
+  }
+  
+  .pixelated-overlay {
+    background-size: 1px 1px, 1px 1px, 4px 4px, 4px 4px;
+  }
+  
+  .pixelated-cloud {
+    /* Smaller clouds on mobile for better performance */
+    max-width: 100px;
+    min-width: 40px;
+  }
+}
+
+
