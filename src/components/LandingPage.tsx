@@ -17,34 +17,35 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
   // Load ABC Favorite Mono font
   React.useEffect(() => {
     const link = document.createElement('link');
-    link.href = 'https://fonts.googleapis.com/css2?family=ABC+Favorit+Mono:wght@400;500&display=swap';
+    link.href =
+      'https://fonts.googleapis.com/css2?family=ABC+Favorit+Mono:wght@400;500&display=swap';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
-    
+
     return () => {
       document.head.removeChild(link);
     };
   }, []);
 
   return (
-    <motion.div 
+    <motion.div
       className="min-h-screen relative overflow-hidden"
       style={{ backgroundColor: '#f8f4ec' }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, scale: 0.95 }}
-      transition={{ duration: 0.6, ease: "easeInOut" }}
+      transition={{ duration: 0.6, ease: 'easeInOut' }}
     >
       {/* Header image */}
-      <motion.div 
+      <motion.div
         className="absolute top-4 w-full flex justify-center px-12"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <img 
-          src={headerImage} 
-          alt="by enrico & na - dei summer lab '25" 
+        <img
+          src={headerImage}
+          alt="by enrico & na - dei summer lab '25"
           className="h-12 md:h-16 lg:h-20 xl:h-24 object-contain max-w-full"
         />
       </motion.div>
@@ -52,17 +53,17 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
       {/* Main content container */}
       <div className="flex flex-col items-center justify-start pt-24 px-6 h-screen overflow-hidden">
         {/* Sub-heading */}
-        <motion.div 
+        <motion.div
           className="text-center mb-0 mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <p 
+          <p
             className="text-lg md:text-xl tracking-wider"
-            style={{ 
+            style={{
               fontFamily: '"ABC Favorit Mono", "Courier New", monospace',
-              color: '#797979'
+              color: '#797979',
             }}
           >
             HI! I'M YOUR PERSONAL
@@ -70,27 +71,27 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         </motion.div>
 
         {/* Main title */}
-        <motion.div 
+        <motion.div
           className="flex items-center justify-center mb-0 mt-0"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.0, delay: 0.6 }}
         >
-          <img 
-            src={titleImage} 
-            alt="ADVERSARIAL COLLABORATOR" 
+          <img
+            src={titleImage}
+            alt="ADVERSARIAL COLLABORATOR"
             className="h-36 md:h-48 lg:h-60 xl:h-72 object-contain pixelated-title max-w-full"
           />
         </motion.div>
 
         {/* Get Started Button */}
-        <motion.div 
+        <motion.div
           className="mb-4 -mt-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <Button 
+          <Button
             onClick={onGetStarted}
             className="bg-black text-white hover:bg-gray-800 text-xl px-12 py-4 rounded-full transition-colors duration-300"
             style={{ fontFamily: 'Inter, sans-serif' }}
@@ -100,7 +101,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         </motion.div>
 
         {/* Feature cards */}
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-3 gap-2 max-w-4xl mx-auto mb-2"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -110,50 +111,62 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: [0, -8, 0] }}
-            transition={{ 
+            transition={{
               opacity: { duration: 0.6, delay: 1.2 },
-              y: { duration: 3.5, delay: 1.2, repeat: Infinity, ease: "easeInOut" }
+              y: { duration: 3.5, delay: 1.2, repeat: Infinity, ease: 'easeInOut' },
             }}
           >
-            <img src={researchCard} alt="Research Collaboration" className="w-full h-auto object-contain" />
+            <img
+              src={researchCard}
+              alt="Research Collaboration"
+              className="w-full h-auto object-contain"
+            />
           </motion.div>
 
           {/* Visual Mind Mapping Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: [0, -12, 0] }}
-            transition={{ 
+            transition={{
               opacity: { duration: 0.6, delay: 1.4 },
-              y: { duration: 4.2, delay: 1.8, repeat: Infinity, ease: "easeInOut" }
+              y: { duration: 4.2, delay: 1.8, repeat: Infinity, ease: 'easeInOut' },
             }}
           >
-            <img src={mindmapCard} alt="Visual Mind Mapping" className="w-full h-auto object-contain" />
+            <img
+              src={mindmapCard}
+              alt="Visual Mind Mapping"
+              className="w-full h-auto object-contain"
+            />
           </motion.div>
 
           {/* Integrated Workflow Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: [0, -6, 0] }}
-            transition={{ 
+            transition={{
               opacity: { duration: 0.6, delay: 1.6 },
-              y: { duration: 2.8, delay: 2.1, repeat: Infinity, ease: "easeInOut" }
+              y: { duration: 2.8, delay: 2.1, repeat: Infinity, ease: 'easeInOut' },
             }}
           >
-            <img src={workflowCard} alt="Integrated Workflow" className="w-full h-auto object-contain" />
+            <img
+              src={workflowCard}
+              alt="Integrated Workflow"
+              className="w-full h-auto object-contain"
+            />
           </motion.div>
         </motion.div>
       </div>
 
       {/* Earth/Globe */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-[35%]"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.0, delay: 1.8 }}
       >
-        <img 
-          src={earthImage} 
-          alt="Earth" 
+        <img
+          src={earthImage}
+          alt="Earth"
           className="w-[32rem] h-[32rem] md:w-[36rem] md:h-[36rem] lg:w-[40rem] lg:h-[40rem] xl:w-[44rem] xl:h-[44rem] object-contain"
           style={{ imageRendering: 'auto' }}
         />
