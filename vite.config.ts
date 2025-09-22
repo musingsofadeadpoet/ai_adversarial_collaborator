@@ -64,8 +64,8 @@
       },
     },
     build: {
-      target: 'esnext',
-      outDir: 'dist',
+      target: "esnext",
+      outDir: "build",
     },
     server: {
       port: 3000,
