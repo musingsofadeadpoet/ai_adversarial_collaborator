@@ -76,18 +76,18 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.0, delay: 0.6 }}
         >
-<img 
-  src={titleImage} 
-  alt="ADVERSARIAL COLLABORATOR" 
-  className="h-36 md:h-48 lg:h-60 xl:h-72 object-contain pixelated-title max-w-full"
-  style={{
-    imageRendering: 'pixelated',
-    MozImageRendering: 'crisp-edges',
-    WebkitImageRendering: 'crisp-edges',
-    marginBottom: 0,
-    display: 'block'
-  }}
-/>
+          <img 
+            src={titleImage} 
+            alt="ADVERSARIAL COLLABORATOR" 
+            className="h-36 md:h-48 lg:h-60 xl:h-72 object-contain pixelated-title max-w-full"
+            style={{
+              imageRendering: 'pixelated',
+              MozImageRendering: 'crisp-edges',
+              WebkitImageRendering: 'crisp-edges',
+              marginBottom: 0,
+              display: 'block'
+            }}
+          />
 
         </motion.div>
 
